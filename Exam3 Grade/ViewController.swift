@@ -19,17 +19,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func click(_ sender: Any) {
-        if inputScore < 50 {
+        switch inputScore.text {
+        case inputScore < 50:
             outputScore.text = "F"
-        } else if inputScore < 60 {
+        case inputScore < 60:
             outputScore.text = "D"
-        } else if inputScore < 70 {
+        case inputScore < 70:
             outputScore.text = "C"
-        } else if inputScore = 80
+        case inputScore < 80:
             outputScore.text = "B"
-    } else
-        outputScore.text = "A"
-    }
+        case inputScore > 79:
+            outputScore.text = "A"
+        }
+        
         outputScore.text = "Your Score = \(inputScore.text!)\n Your Grade = \(Grade)"
 }
 
+}
