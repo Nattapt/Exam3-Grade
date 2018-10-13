@@ -9,12 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var Grade = ""
+    @IBOutlet weak var inputScore: UITextField!
+    @IBOutlet weak var outputScore: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func click(_ sender: Any) {
+        if inputScore < 50 {
+            outputScore.text = "F"
+        } else if inputScore < 60 {
+            outputScore.text = "D"
+        } else if inputScore < 70 {
+            outputScore.text = "C"
+        } else if inputScore = 80
+            outputScore.text = "B"
+    } else
+        outputScore.text = "A"
+    }
+        outputScore.text = "Your Score = \(inputScore.text!)\n Your Grade = \(Grade)"
 }
 
