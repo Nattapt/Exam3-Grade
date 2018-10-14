@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var Grade = ""
+    var grade = ""
     @IBOutlet weak var inputScore: UITextField!
     @IBOutlet weak var outputScore: UITextView!
     
@@ -19,20 +19,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func click(_ sender: Any) {
-        switch inputScore.text {
-        case inputScore < 50:
-            outputScore.text = "F"
-        case inputScore < 60:
-            outputScore.text = "D"
-        case inputScore < 70:
-            outputScore.text = "C"
-        case inputScore < 80:
-            outputScore.text = "B"
-        case inputScore > 79:
-            outputScore.text = "A"
+        let intScore = Int(inputScore.text!)!
+        if intScore < 50 {
+            grade = "F"
+        } else if intScore < 60 {
+            grade = "D"
+        } else if intScore < 70 {
+            grade = "C"
+        } else if intScore < 80 {
+            grade = "B"
+        } else {
+            grade = "A"
         }
-        
-        outputScore.text = "Your Score = \(inputScore.text!)\n Your Grade = \(Grade)"
-}
+        outputScore.text = "Your Score = \(inputScore.text!)\n Your Grade = \(grade)"
+    }
 
 }
